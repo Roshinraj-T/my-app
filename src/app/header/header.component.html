@@ -1,0 +1,135 @@
+<h3>Interpolation</h3>
+<p>hello! {{name+"hangasamy"}}</p>
+<input type="text" value="{{name}}">
+<p>
+============================================================
+
+</p>
+<h3>property binding</h3>
+<p>hello! {{name+"hangasamy"}}</p>
+<input type="text" #myname [value]=name [disabled]=isDisabled>
+<p> 
+============================================================
+</p>
+<h3>
+    Event binding
+</h3>
+<!-- <button (click)="run($event)">click</button> -->
+<div>
+    <button (click)="run()">click</button>
+{{myname.value}}
+</div>
+
+<div>
+    <input type="text" (keyup)="enableBtn($event)" [value]=value >
+<button [disabled]=!isDisabled> next</button>
+</div>
+<p>
+============================================================
+
+</p>
+<h3>
+    Two way binding
+</h3>
+<!-- 2waybinding -->
+<!-- <textarea name="" id="" cols="30" rows="10" [(ngmodel)]="twoWay" ></textarea -->
+    <!-- <input type="text" [(ngModel)]="two"> -->
+    <p>{{two}}</p>
+    <p>
+     ============================================================
+
+    </p>
+<h3>Directives</h3>
+<ul>
+    <li>ngIf
+        <div>
+            <p *ngIf="show">welcome to home</p>
+            <p *ngIf="show;else elseBlock"></p>
+            <ng-template #elseBlock><p>not welcome</p> </ng-template>
+            <p *ngIf="!show">not welcome to home</p>
+        </div>
+    </li>
+    <li>ngFor
+        <div>
+            <ul>
+                <!-- <li *ngFor="let e of arr">{{e}}</li> -->
+            </ul>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <!-- <td>{{}}</td>
+                    <td>{{}}</td>
+                    <td>{{}}</td> -->
+                </tr>
+            </table>
+            <div class="countbtn">
+                <button (click)="decrement()">-</button>  {{num}} <button (click)="increment()">+</button> 
+            </div>
+        </div>
+    </li>
+</ul>
+<p>
+============================================================
+
+</p>
+<h3>Parent to child</h3>
+
+   
+
+title {{property}}
+a={{a}}
+b={{b}}
+c={{a+b}}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>age</th>
+        <th>gender</th>
+    </tr>
+    <tr>
+        <td>{{details.name}}</td>
+        <td>{{details.age}}</td>
+        <td>{{details.gender}}</td>
+
+    </tr>
+</table>
+
+    <!-- <button (mouseover)="mouseClick()"></button> -->
+    <button (click)="clickBtn()">  click</button>
+    <!-- this is {{obj.name}}.my age is {{obj.age}} {{obj.gender}} <br> -->
+
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+        </tr>
+        <tr *ngFor="let e of arrdetails">
+            <td>{{e.name}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.gender}}</td>
+
+        </tr>
+    </table>
+
+            <!-- <td>{{v.gender}}</td> -->
+<p>
+============================================================
+
+</p>
+<h3>Child to parent</h3>
+<!-- <button (click)="sendToParent()">check</button> -->
+
+<h3>Form</h3>
+<label for=""> Name : </label>
+<input type="text" #contactname>
+<label for=""> Email : </label>
+<input type="text" #email>
+<label for=""> Address : </label>
+<input type="text" #address>
+<button (click)="submit(contactname.value,email.value,address.value)">Submit</button>
