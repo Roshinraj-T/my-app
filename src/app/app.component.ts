@@ -7,12 +7,11 @@ import { HeaderComponent } from './header/header.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit{
-
+  @ViewChild(HeaderComponent) public child:any;
   title = 'my-app';
   a:number=10;
   b:number=20;
   name:string='';
-  @ViewChild(HeaderComponent) public mynewname:any;
   details:any={
     name:"Roshin",
     age:21,
@@ -64,6 +63,7 @@ export class AppComponent implements AfterViewInit{
   message=''
   dataFromChild:any;
   role:string='';
+  dataFromChildInView:any;
   // formDataFromChild:any;
   formDataFromChild: any[] = [];
   funFromchild(e:string){
@@ -72,7 +72,10 @@ export class AppComponent implements AfterViewInit{
   }   
   ngAfterViewInit(): void {
     // throw new Error('Method not implemented.');
-    this.message=this.mynewname.myname
+    this.message=this.child.myname
+    this.dataFromChildInView=this.child.passDataToParent;
+    console.log(this.dataFromChildInView);
+    
   }
   fromChild(e:any){
     this.dataFromChild=e
@@ -87,8 +90,6 @@ export class AppComponent implements AfterViewInit{
   //   // console.log(this.formDataFromChild);    
   //   this.formDataFromChild.push(e.name);
   //   // console.log(this.formDataFromChild);
-    
-    
   // }
   loadData(e: any) {
     console.log(e);

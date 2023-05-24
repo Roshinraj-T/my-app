@@ -25,6 +25,23 @@ export class HeaderComponent implements OnInit,OnChanges,AfterViewInit,AfterCont
     name:"raj",
     gender:"male"
   }
+  passDataToParent:any=[
+    {
+      contactId:1,
+      contactName:"roshinraj",
+      contactNumber:91138684
+    },
+    {
+      contactId:2,
+      contactName:"aravindh",
+      contactNumber:91138684
+    },
+    {
+      contactId:3,
+      contactName:"rohith",
+      contactNumber:91138684
+    }
+  ]
   two:string="2way"
 
   // obj=

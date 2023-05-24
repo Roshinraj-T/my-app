@@ -16,6 +16,7 @@
 <!-- {{message}} -->
 <p>welcome{{name}}</p> 
  <!-- {{obj}} -->
+ <h4>=======Child To Parent======</h4>
  <table>
     <tr>
         <th>Name</th>
@@ -29,6 +30,22 @@
        <td>{{e.address}}</td>
     </tr>
 </table>
+
+<p>===============================child to parent in viewchild===============================</p>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+    </tr>
+    <!-- *ngFor="let e of formDataFromChild" -->
+    <tr *ngFor="let e of dataFromChildInView">
+       <td>{{e.contactId}}</td>
+       <td>{{e.contactName}}</td>
+       <td>{{e.contactNumber}}</td>
+    </tr>
+</table>
+
 <p>
     =====================================child===========================================
 </p>
