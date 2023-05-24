@@ -120,8 +120,10 @@ export class HeaderComponent implements OnInit,OnChanges,AfterViewInit,AfterCont
       email:email,
       address:address
     }
+
     // console.log(valueOfForm);
     this.formSubmit.emit(valueOfForm);
+    
   }
   // chToP(){
   //   this.outterForjson.emit(this.data)

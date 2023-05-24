@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent implements AfterViewInit{
   @ViewChild(HeaderComponent) public child:any;
+  visible:boolean=true;
   title = 'my-app';
   a:number=10;
   b:number=20;
@@ -66,6 +67,7 @@ export class AppComponent implements AfterViewInit{
   dataFromChildInView:any;
   // formDataFromChild:any;
   formDataFromChild: any[] = [];
+  searchData:any={};
   funFromchild(e:string){
     this.name=e
     console.log("cadca",e);
@@ -97,4 +99,37 @@ export class AppComponent implements AfterViewInit{
     console.log(this.formDataFromChild);
     
   }
+  searchfun(findData:any){
+    // let dataFromChild=[
+    //   {
+    //     name:"roshin",
+    //     age:21
+    //   },
+    //   {
+    //     name:"selva",
+    //     age:21
+    //   },
+    //   {
+    //     name:"gokul",
+    //     age:20
+    //   }
+    // ]
+      // for (let i = 0; i < this.formDataFromChild.length; i++) {
+      //   const obj = this.formDataFromChild[i];
+      //   // Assuming the object has a property called "value"
+      //   if (obj.name === findData) {
+      //     // return obj;
+      //     this.searchData=obj
+      //     console.log(obj);          
+      //   }
+      // }
+    this.searchData=this.formDataFromChild.filter((e)=>{
+      
+    })
+
+      // return null; // Return null if no matching object is found
+      // console.log(findData);
+      // console.log(this.formDataFromChild);
+      
+    }
 }
