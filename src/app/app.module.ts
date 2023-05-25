@@ -9,6 +9,10 @@ import { SampleComponent } from './sample/sample.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
 import { LearnserviceComponent } from './learnservice/learnservice.component';
+import { ServiceService } from "./service.service";
+import {  ServiceTestService} from "./service-test.service";
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +20,15 @@ import { LearnserviceComponent } from './learnservice/learnservice.component';
     SampleComponent,
     FooterComponent,
     ServicesComponent,
-    LearnserviceComponent
+    LearnserviceComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceService,ServiceTestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

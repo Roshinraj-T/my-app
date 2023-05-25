@@ -20,7 +20,9 @@ export class Studentlist {
           gender:"male"
         }
       ]
-    constructor() {
+      status:boolean;
+    constructor( status:boolean) {
         // super();
+        this.status=status;
     }
 }

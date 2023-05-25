@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Studentlist } from '../test';
+import { ServiceService } from "../service.service";
+import { ServiceTestService } from "../service-test.service";
 
 @Component({
   selector: 'app-services',
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })
-export class ServicesComponent {
+export class ServicesComponent implements OnInit{
 // arr:any[]=[
 //   {
 //     name:"roshin",
@@ -25,5 +27,18 @@ export class ServicesComponent {
 //     gender:"male"
 //   }
 // ]
- s=new Studentlist()
+//  s=new Studentlist()
+studentList:any;
+contactList:any;
+constructor(public s:ServiceService,public S:ServiceTestService){
+  
+}
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+    // this.studentList=this.s.getStudentList();
+    // this.contactList=this.S.getAllData();
+    this.s.getStudentList().subscribe((data)=>this.studentList=data)
+    // this.s.getStudentList();
+    this.s.getStudentList().subscribe((data)=>this.studentList=data)
+  }
 }

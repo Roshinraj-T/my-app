@@ -5,9 +5,23 @@
         <th>Name</th>
         <th>Gender</th>
     </tr>
-    <tr *ngFor="let e of s.arr">
+    <tr *ngFor="let e of contactList">
         <td>{{e.name}}</td>
         <td>{{e.gender}}</td>
     </tr>
+</table>
+<table>
+    <thead>
+        <th>ContactId</th>
+        <th>ContactName</th>
+        <th>ContactNumber</th>            
+    </thead>   
+    <tbody>
+        <tr *ngFor="let e of studentList">
+            <td>{{e.contactid}}</td>
+            <td>{{e.contactname}}</td>
+            <td>{{e.contactnumber}}</td>
+        </tr>
+    </tbody>    
 </table>
 <!-- {{s.text}} -->
