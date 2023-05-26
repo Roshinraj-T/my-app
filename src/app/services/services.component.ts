@@ -30,8 +30,7 @@ export class ServicesComponent implements OnInit{
 //  s=new Studentlist()
 studentList:any;
 contactList:any;
-constructor(public s:ServiceService,public S:ServiceTestService){
-  
+constructor(public s:ServiceService,public S:ServiceTestService){  
 }
   ngOnInit(): void {
     // throw new Error('Method not implemented.');

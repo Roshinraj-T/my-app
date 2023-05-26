@@ -1,0 +1,73 @@
+============install==============
+npm i -g @angular/cli
+=============run============
+ng serve
+
+building blocks of angular
+1.modules
+2.bindings
+    *property bindings[]
+        class->html
+    *event bindings()
+        html->class
+    *2way bindings
+        html<->class
+3.component
+    * to create a component->ng g c c-name
+    *put component tag into app  component
+    *lifecycle
+        #onInit
+        #onChange
+        #onAfterviewchild
+        #ondestroy
+    *datapassing between 
+        =>p->c(property bindin[])
+            # variable created in parent component
+            # pass a variable while child component creation time with this syntax ---  
+                 <tag [property-name]=" created variable name"></tag> 
+            # import input in  child component
+            # @decorator is also an interface but we don't have to implpement it
+            # @input() public var-name:any;
+            # we can use this passed variable with that variable name in html using string interpolation --- 
+                {{var-name}}
+        =>c->p(event binding ())
+            # in child to parent, here we want some action to iteract with parent. because we don't have the access any parent tag in our child.
+              so we need a action or any user interaction to pass a data.
+            # create a button to interact and assign a function to click attribute with event binding like this --- 
+                <b (click)="fun()"></b>.
+            # import output and EventEmitter in child component
+            # put this code in class of child component --- 
+                @output() publlic variable-name=new EventEmitter;
+            # write a function for that function which was assigned in button --- 
+                fun(){}
+            # in that function emit a data which you want to emit using emit function --- 
+                this.variable-name.emit(passing-variable-name).
+            # and goes to parent component html put that function in child tag with event binding like this --- 
+                <tag (variable-name)="function-name($event)"></tag>
+            # create a varible in parent class for receiving data.
+            # create a function in parent component class and assign that variable to that receivingdata variable. ---- 
+                fun(e.any){ 
+                    this.receivingdata=e
+                    }
+            # now u can access that child variable with that receivingdata varible which was created for receiving data. ---
+                 {{receivingdata}}
+        =>unrelated
+4.template
+    * all your htmlcomponent
+5.service 
+    *use a data from one place and it will acessed on many components.
+    *to create a service => ng g s s-name
+    * import httpclilent
+    *Add the respective function.
+    *register the service 
+        *app modules
+            1.import service into app modules
+            2. give ur variable name to providers
+    *import onInit and service to a component which you like to pass a data
+            -> inject the service variable name to component constructor with that member variable
+            -> implpement onInit in that class 
+6.metadata
+7.observable
+8.directives 
+9.dependency injection
+10.routing
